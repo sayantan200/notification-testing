@@ -5,8 +5,10 @@ import 'notice.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  //init notification
-  await Notice().initNotification();
+  // Initialize notifications in background to not block app startup
+  Notice().initNotification().catchError((e) {
+    print('Notification initialization failed: $e');
+  });
 
   runApp(const MyApp());
 }
