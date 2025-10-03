@@ -13,3 +13,5 @@ workflows:
           flutter build ipa --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
+      - build/ios/iphonesimulator/Runner.app.zip
+
